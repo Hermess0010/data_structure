@@ -196,6 +196,18 @@ int getLinkedListLength(LinkedList *pList){
     }
 }
 
+//------------------------------------연결리스트 출력 함수----------------------------------------------------//
+void displayLinkedList(LinkedList *pList){
+
+    if(pList != NULL){
+
+        for(int i = 0; i < pList -> currentElementCount; i++){
+
+            printf("[%d] : %d", i, getElement(pList,i));
+        }
+    }
+}
+
 //-----------------------------------------연결 리스트가 비었는지 확인하는 함수-------------------------------//
 int isEmpty(LinkedList *pList){
 
