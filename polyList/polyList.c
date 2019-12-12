@@ -98,6 +98,7 @@ LinkedList* polyAdd(LinkedList *pListA, LinkedList *pListB){
         }
 }
 
+//-------------------------------------------------다항식 리스트를 출력하는 함수-----------------------------//
 void displayPolyList(LinkedList *pList){
 
     if(pList != NULL){
@@ -117,6 +118,7 @@ void displayPolyList(LinkedList *pList){
         }
 }
 
+//-----------------------------------------------다항식 리스트 두개를 빼는 함수--------------------------------//
 LinkedList* polySub(LinkedList *pListA, LinkedList *pListB){
 
     if(pListA != NULL){
