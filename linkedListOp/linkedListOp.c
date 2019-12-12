@@ -51,3 +51,24 @@ void concatLinkedList(LinkedList *pListA, LinkedList *pListB){
     
 }
 
+void reverseLinekedList(LinkedList *pList){
+
+    if(pList != NULL){
+
+            ListNode *pPreNode = NULL, *pCurrentNode = NULL, *pNextNode = NULL;
+
+            pCurrentNode = &(pList -> headerNode.pLink);
+
+            for(int i = 0; i < pList -> currentElementCount; i++){
+
+                pNextNode = pCurrentNode -> pLink;
+                pCurrentNode -> pLink = pPreNode;
+                pPreNode = pCurrentNode;
+                pCurrentNode = pNextNode;
+            }
+
+            pList -> headerNode.pLink = pCurrentNode;
+
+    }
+}
+
