@@ -102,7 +102,6 @@ StackNode* PeekLS(LinkedStack *pStack){
 
             StackNode *pNode = NULL;
             pNode = pStack -> pTopElement;
-
             pStack -> currentElementCount--;
 
             return pNode;

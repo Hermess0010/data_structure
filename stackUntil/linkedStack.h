@@ -10,13 +10,13 @@ typedef struct StackNode{
 typedef struct LinkedStack{
 
     int currentElementCount;
-    StackNode *pTopElement;
+    stackNode *pTopElement;
 }LinkedStack;
 
 LinkedStack* createLinkedStack();
 int PushLS(LinkedStack *pStack, StackNode element);
-StackNode* PopLS(LinkedStack *pStack);
-StackNode* PeekLS(LinkedStack *pStack);
+stackNode* PopLS(LinkedStack *pStack);
+stackNode* PeekLS(LinkedStack *pStack);
 void DeleteLinkedStack(LinkedStack *pStack);
 int isLinkedStackFull(LinkedStack *pStack);
 int isLinkedStackEmpty(LinkedStack *pStack);
