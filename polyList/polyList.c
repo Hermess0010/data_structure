@@ -116,3 +116,73 @@ void displayPolyList(LinkedList *pList){
             printf("오류, NULL다항식이 전달되었습니다\n");
         }
 }
+
+LinkedList* polySub(LinkedList *pListA, LinkedList *pListB){
+
+    if(pListA != NULL){
+
+        if(pListB != NULL){
+
+            LinkedList *pListC = createLinkedList();
+            ListNode *pNodeA = NULL, *pNodeB = NULL;
+
+            pNodeA = &(pListA -> headerNode);
+            pNodeB = &(pListB -> headerNode);
+
+            while(pNodeA != NULL && pNodeB != NULL){
+
+                pNodeA = pNodeA -> pLink;
+                pNodeB = pNodeB -> pLink;
+
+                int coefA = pNodeA -> coef;
+                int coefB = pNodeB -> coef;
+
+                if(pNodeA -> degree == pNodeB -> degree){
+
+                    addPolyLast(pListC, coefA - coefB , pNodeA -> degree);
+
+                    pNodeA = pNodeA -> pLink;
+                    pNodeB = pNodeB -> pLink;
+                }
+                else if(pNodeA -> degree > pNodeB -> degree){
+
+                    addPolyLast(pListC, coefA, pNodeA -> degree);
+
+                    pNodeA = pNodeA -> pLink;
+                }
+                else if(pNodeA -> degree < pNodeB -> degree){
+
+                    addPolyLast(pListC, coefB, pNodeB -> degree);
+
+                    pNodeB = pNodeB -> pLink;
+                }
+            }
+
+            while(pNodeA != NULL){
+
+                addPolyLast(pListC, pNodeA -> coef, pNodeA -> degree);
+
+                pNodeA = pNodeA -> pLink;
+            }
+
+            while(pNodeB != NULL){
+
+                addPolyLast(pListC, pNodeB -> coef, pNodeB -> degree);
+
+                pNodeB = pNodeB -> pLink;
+            }
+
+            return pListC;
+        }
+        else{
+
+            printf("오류, NULL다항식이 전달되었습니다\n");
+            return NULL;
+        }
+    }
+    else{
+
+            printf("오류, NULL다항식이 전달되었습니다\n");
+            return NULL;
+        }
+}
