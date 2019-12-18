@@ -17,6 +17,11 @@ typedef struct ArrayHeap{
 ArrayMaxHeap* createArrayMaxHeap(int maxElementCount);
 void deletArrayMaxHeap(ArrayMaxHeap* pArrayHeap);
 void insertMaxHeapAH(ArrayMaxHeap *pArraHeap, HeapNode element);
-HeapNode* delteMAxHeapAH(ArrayMaxHeap* pArrayHeap);
+HeapNode* delteMaxHeapAH(ArrayMaxHeap* pArrayHeap);
+
+ArrayMinHeap* createArrayMinHeap(int minElementCount);
+void deletArrayMinHeap(ArrayMinHeap* pArrayHeap);
+void insertMinHeapAH(ArrayMinHeap *pArraHeap, HeapNode element);
+HeapNode* delteMinHeapAH(ArrayMinHeap* pArrayHeap);
 
 #endif
